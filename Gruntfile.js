@@ -42,7 +42,34 @@ module.exports = function( grunt ) {
         src: '*.css',
         dest: ''
       }
-    }
+    },
+
+    /**
+     * BabelJS task
+     * @link https://babeljs.io/docs/usage/api/
+     */
+    babel: {
+      dev: {
+        options: {
+          minified: false,
+          sourceMap: false,
+          presets: ['latest']
+        },
+        files: {
+          "js/app.js": "js/react-app.js"
+        }
+      },
+      dist: {
+        options: {
+          minified: true,
+          sourceMap: false,
+          presets: ['latest']
+        },
+        files: {
+          "js/app.min.js": "js/react-app.js"
+        }
+      }
+    },
 
     /**
      * Watch task
@@ -50,12 +77,17 @@ module.exports = function( grunt ) {
     watch: {
       css: {
         files: '**/*.scss', /* What files are we watching? */
-        tasks: ['sass','autoprefixer']     /* Run this task (above) */
+        tasks: [ 'sass','autoprefixer' ]     /* Run this task (above) */
+      },
+      js: {
+        files: 'js/react-app.js',
+        tasks: [ 'babel' ]
       }
     },
   });
   grunt.loadNpmTasks( 'grunt-contrib-sass' );
   grunt.loadNpmTasks( 'grunt-contrib-watch' );
   grunt.loadNpmTasks( 'grunt-autoprefixer' );
+  grunt.loadNpmTasks( 'grunt-babel' );
   grunt.registerTask( 'default', ['watch'] );
 }
