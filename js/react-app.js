@@ -1,6 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
 /**
  * REACT app with WP API
  * @link http://mediatemple.net/blog/tips/loading-and-using-external-data-in-react/
@@ -13,7 +10,7 @@ var Advent = React.createClass({
       posts: [] // our data setup is expecting Posts
     }
   },
-// something
+
   componentDidMount: function() {
     var _th = this;
     this.serverRequest =
@@ -38,17 +35,18 @@ var Advent = React.createClass({
 			{this.state.posts.map(function(post) {
 				return (
 					<div key={post.link} className="post">
+            <a className="author-wrap" href={post._embedded.author[0].link}><img className="avatar" src={post._embedded.author[0].avatar_urls['48']} />posted by {post._embedded.author[0].name}</a>
 						<h2 className="post-title"><a href={post.link}
 						dangerouslySetInnerHTML={{__html:post.title.rendered}}
 						/></h2>
-						{post.featured_media ?
-							<a href={post.link}><img src={post._embedded['wp:featuredmedia'][0].media_details.sizes["large"].source_url} /></a>
-						: null}
+						 {/* post.featured_media ?
+						 	<a href={post.link}><img src={post._embedded['wp:featuredmedia'][0].media_details.sizes["large"].source_url} /></a>
+						 : null */}
 						{post.excerpt.rendered ?
 							<div className="excerpt" dangerouslySetInnerHTML={{__html:post.excerpt.rendered}} />
 						: null}
 						<div className="entry-meta">
-							<a className="author-wrap" href={post._embedded.author[0].link}><img className="avatar" src={post._embedded.author[0].avatar_urls['48']} />by&nbsp; {post._embedded.author[0].name}</a>
+
 							<a className="button read-more" href={post.link}>Read More &raquo;</a>
 						</div>
 					</div>

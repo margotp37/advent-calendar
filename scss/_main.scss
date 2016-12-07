@@ -1,7 +1,5 @@
-
-
-/**
- * General Styles 
+/** 
+ * General Styles
  */
 * {
   margin: 0;
@@ -238,6 +236,52 @@ section {
   margin-top: -5px;
 }
 
+/**
+ * React Posts
+ */
+#posts {
+  max-width: 600px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+}
+#posts .post {
+  box-sizing: border-box;
+  border-bottom: 3px solid $color__dark_blue_alpha;
+  margin: 3em auto;
+}
+#posts .post-title a {
+  color: black;
+  text-decoration: none;
+  border: 0;
+  padding-bottom: 2em;
+}
+#posts .excerpt {
+  padding: 0.5em 0;
+}
+#posts .entry-meta {
+  padding: 0 0 1.5em;
+  border: 0;
+  text-align: center;
+}
+#posts .author-wrap {
+  border: 0;
+  color: $color__dark_blue;
+}
+#posts .avatar {
+  padding-right: 0.5em;
+}
+#posts .button {
+  border: 0;
+  background: $color__dark_blue_alpha;
+  color: white;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}
 /**
  * Sections
  */
