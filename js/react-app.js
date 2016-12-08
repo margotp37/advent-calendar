@@ -1,3 +1,6 @@
+
+import React from 'react';
+import ReactDOM from 'react-dom';
 /**
  * REACT app with WP API
  * @link http://mediatemple.net/blog/tips/loading-and-using-external-data-in-react/
@@ -39,9 +42,9 @@ var Advent = React.createClass({
 						<h2 className="post-title"><a href={post.link}
 						dangerouslySetInnerHTML={{__html:post.title.rendered}}
 						/></h2>
-						 {/* post.featured_media ?
-						 	<a href={post.link}><img src={post._embedded['wp:featuredmedia'][0].media_details.sizes["large"].source_url} /></a>
-						 : null */}
+						 {post.featured_media ?
+						 	<a href={post.link}><img src={post._embedded['wp:featuredmedia'][0].media_details.sizes["thumbnail"].source_url} /></a>
+						 : null}
 						{post.excerpt.rendered ?
 							<div className="excerpt" dangerouslySetInnerHTML={{__html:post.excerpt.rendered}} />
 						: null}

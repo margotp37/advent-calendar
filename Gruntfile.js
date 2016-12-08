@@ -53,7 +53,7 @@ module.exports = function( grunt ) {
         options: {
           minified: false,
           sourceMap: false,
-          presets: ['latest']
+          presets: ['latest', 'react']
         },
         files: {
           "js/app.js": "js/react-app.js"
@@ -63,7 +63,7 @@ module.exports = function( grunt ) {
         options: {
           minified: true,
           sourceMap: false,
-          presets: ['latest']
+          presets: ['latest', 'react']
         },
         files: {
           "js/app.min.js": "js/react-app.js"

@@ -10,6 +10,11 @@ Follow along with my progress on this series as I blog about it here: [Coding an
 
 ### Development
 
+##### 12.08 - [December 8, 2016](http://wp.me/p3Rn30-86d)
+* Use React and Babel via CDN to get it working "locally"
+* Install React developer Tools for Chrome
+* Create very basic React.js pages to learn it
+
 ##### 12.07 - [December 7, 2016](http://wp.me/p3Rn30-85T)
 * WP REST API in core!
 * Build React Component to create Posts
