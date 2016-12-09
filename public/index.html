@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sonsie+One|Quicksand|Nunito|Varela+Round|Averia+Serif+Libre" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tag above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Advent Calendar</title>
+  </head>
+  <body>
+    <header>
+    <nav class="main-menu">
+      <span class="logo">
+        <img src="">
+      </span>
+      <hgroup class="page-title">
+        <h1>Secret Santa - React Experiments</h1>
+      </hgroup>
+      <ul class="menu">
+        <li class="about-link">About</li>
+      </ul>
+    </nav>
+    </header>
+
+    <section class="notes hidden">
+      <span class="close-notes">x</span>
+      <div class="about">
+        <p>Coming soon!</p>
+      </div>
+    </section>
+
+    <main>
+        <section id="react-container"></section>
+    </main>
+
+    <footer>
+
+    </footer>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start`.
+      To create a production bundle, use `npm run build`.
+    -->
+
+    <!-- Load external JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="//static.madebymagnitude.com/javascript/jQuery.snow.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.min.js"></script> -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/axios/0.8.1/axios.min.js"></script>
+
+    <!-- Load local JavaScript functions -->
+    <script type="text/javascript" src="functions.js"></script>
+  </body>
+</html>
