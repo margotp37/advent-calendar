@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tag above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Advent Calendar</title>
+    <!-- Load external Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sonsie+One|Quicksand|Nunito|Varela+Round|Averia+Serif+Libre" />
+  </head>
+  <body>
+    <header>
+    <nav class="main-menu">
+      <span class="logo">
+        <img src="">
+      </span>
+      <hgroup class="page-title">
+        <h1>Advent Calendar</h1>
+      </hgroup>
+      <ul class="menu">
+        <li class="about-link">About</li>
+        <li class="notes-link">Notes</li>
+      </ul>
+    </nav>
+    </header>
+
+    <section class="notes hidden">
+      <span class="close-notes">x</span>
+      <div class="about">
+        <p>Coming soon!</p>
+      </div>
+      <div class="design-notes">
+      <ol>
+        <li><a href="http://www.schillmania.com/projects/snowstorm/">Let</a> <a href="http://loktar00.github.io/JQuery-Snowfall/">it</a> <a href="https://www.madebymagnitude.com/blog/7-ideas-to-spice-up-your-website-this-christmas/">snow</a> <i class="fa fa-check" aria-hidden="true"></i></li>
+        <li><a href="http://color.adobe.com">Choose color palette</a> <i class="fa fa-check" aria-hidden="true"></i></li>
+        <li><del><a href="http://codepen.io/seanmccaffery/pen/xBpbG">Cool title hover effect?</a></del></li>
+        <li><a href="http://codepen.io/SitePoint/pen/dppJzX">Tilted Angled lines?</a></li>
+        <li><a href="http://demo.iprodev.com/christmas/">Cool Landing Page design</a></li>
+        <li>Make <a href="https://santatracker.google.com/village.html">vector</a> <a href="http://xmas.sitepoint.com/#day/1">background</a></li>
+        <li>Or, draw CSS Christmas shapes (presents) <i class="fa fa-check" aria-hidden="true"></i></li>
+        <li><a href="http://xmas.sitepoint.com/#day/1">Scroll</a> <a href="http://www.polishchristmasguide.com/">right</a> or pop out like PPT or <a href="http://pepsized.com/merry-scrolling-with-skrollr-js/">do something with scroll</a> <i class="fa fa-check" aria-hidden="true"></i> fix 5px error</li>
+        <li>When click present, it slides to the center and opens, click away, slides back in place and closes</li>
+        <li>Make each <a href="https://24ways.org/">section</a> open a <a href="http://uxmas.com/2016/a-miracle-at-christmas/">blog post</a></li>
+        <li>Use <a href="http://codepen.io/krogsgard/pen/NRBqPp">WP API</a> to load Posts</li>
+        <li>Create Christmas icons and <a href="https://github.com/alexk111/SVG-Morpheus">morph them</a></li>
+      </ol>
+      </div>
+    </section>
+
+    <main>
+      <aside class="countdown-clock">
+        <ul id="countdown">
+          <li id="days">
+            <div class="number">00</div>
+            <div class="label">Days</div>
+            <svg width="100" height="100" class="pie-plate">
+              <circle r="50" cx="50" cy="50" class="pie" />
+            </svg>
+          </li>
+          <li id="hours">
+            <div class="number">00</div>
+            <div class="label">Hours</div>
+            <svg width="100" height="100" class="pie-plate">
+              <circle r="50" cx="50" cy="50" class="pie" />
+            </svg>
+          </li>
+          <li id="minutes">
+            <div class="number">00</div>
+            <div class="label">Minutes</div>
+            <svg width="100" height="100" class="pie-plate">
+              <circle r="50" cx="50" cy="50" class="pie" stroke-dasharray="10"/>
+            </svg>
+          </li>
+          <li id="seconds">
+            <div class="number">00</div>
+            <div class="label">Seconds</div>
+            <svg width="100" height="100" class="pie-plate">
+              <circle r="50" cx="50" cy="50" class="pie" />
+            </svg>
+          </li>
+        </ul>
+        <p>Remaining 'til Christmas <span class="this-year"></span></p>
+      </aside>
+
+      <div class="controls">
+        <div class="prev">
+          <i class="fa fa-5x fa-angle-left"></i>
+        </div>
+        <div class="next">
+          <i class="fa fa-5x fa-angle-right"></i>
+        </div>
+      </div>
+
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start`.
+      To create a production bundle, use `npm run build`.
+    -->
+  </main>
+
+  <footer>
+    <ul id="index" class="day-list">
+      <li><a href="#day-1"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>1</span></a></li>
+      <li><a href="#day-2"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>2</span></a></li>
+      <li><a href="#day-3"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>3</span></a></li>
+      <li><a href="#day-4"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>4</span></a></li>
+      <li><a href="#day-5"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>5</span></a></li>
+      <li><a href="#day-6"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>6</span></a></li>
+      <li><a href="#day-7"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>7</span></a></li>
+      <li><a href="#day-8"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>8</span></a></li>
+      <li><a href="#day-9"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>9</span></a></li>
+      <li><a href="#day-10"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>10</span></a></li>
+      <li><a href="#day-11"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>11</span></a></li>
+      <li><a href="#day-12"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>12</span></a></li>
+      <li><a href="#day-13"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>13</span></a></li>
+      <li><a href="#day-14"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>14</span></a></li>
+      <li><a href="#day-15"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>15</span></a></li>
+      <li><a href="#day-16"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>16</span></a></li>
+      <li><a href="#day-17"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>17</span></a></li>
+      <li><a href="#day-18"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>18</span></a></li>
+      <li><a href="#day-19"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>19</span></a></li>
+      <li><a href="#day-20"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>20</span></a></li>
+      <li><a href="#day-21"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>21</span></a></li>
+      <li><a href="#day-22"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>22</span></a></li>
+      <li><a href="#day-23"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>23</span></a></li>
+      <li><a href="#day-24"><i class="fa fa-3x fa-gift" aria-hidden="true"></i><span>24</span></a></li>
+      <li class="christmas"><a href="#day-25"><i class="fa fa-4x fa-gift" aria-hidden="true"></i><span>25</span></a></li>
+    </ul>
+  </footer>
+
+  <!-- Load external JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="//static.madebymagnitude.com/javascript/jQuery.snow.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+  <!-- Load local JavaScript functions -->
+  <script type="text/javascript" src="functions.js"></script>
+
+  </body>
+  </html>
