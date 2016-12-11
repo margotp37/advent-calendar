@@ -27,14 +27,18 @@ var Gift = React.createClass({
   /* Note: Use refs to retrieve data (input) into the React script and work with it further */
   renderGift() {
     return (
-      <div className="present" onClick={this.open}>
-        <span className="bow"></span>
-        <span className="ribbon"></span>
-        <div className="tag" onClick={this.address}>
-          To: <input type="text" ref="yourName" />
-          <button onClick={this.save}>X</button>
-        </div>
-        <h1 className="present-title">25<span>th</span></h1>
+      <div className="grid">
+        <section className="day active">
+          <div className="present" onClick={this.open}>
+            <span className="bow"></span>
+            <span className="ribbon"></span>
+            <div className="tag" onClick={this.address}>
+              To: <input type="text" ref="yourName" />
+              <button onClick={this.save}>X</button>
+            </div>
+            <h1 className="present-title">{this.props.key}<span>th</span></h1>
+          </div>
+        </section>
       </div>
     )
   },
@@ -71,10 +75,10 @@ var Christmas = React.createClass({
   getInitialState() { // this is the initial state for Gifts (the children of Christmas)
     return {
       gifts: [
-        'Transformer',
-        'Lego City Train set',
-        'Super Mario Anything',
-        'New bicycle'
+        { id: 0, gift: 'Transformer' },
+        { id: 1, gift: 'Lego City Train set' },
+        { id: 2, gift: 'Super Mario Anything' },
+        { id: 3, gift: 'New bicycle' }
       ]
     }
   },

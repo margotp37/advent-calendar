@@ -1,19 +1,21 @@
-import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
-import Button from './Button';
-import Welcome from './Welcome';
+import React from 'react'
+import { storiesOf, action, linkTo } from '@kadira/storybook'
+import Button from './Button'
+import Welcome from './Welcome'
 
 /* Lynda.com Learning */
-import Hello from './lynda/Hello';
-// import Hello2 from './lynda/Hello';
-// import Hello3 from './lynda/Hello';
-import Checkbox from './lynda/Checkbox';
-import PresentState from './lynda/PresentState';
-import Christmas from './lynda/Christmas';
+import Hello from './lynda/Hello'
+// import Hello2 from './lynda/Hello'
+// import Hello3 from './lynda/Hello'
+import Checkbox from './lynda/Checkbox'
+import PresentState from './lynda/PresentState'
+import Christmas from './lynda/Christmas'
 
 /* Advent Calendar */
-import Gift from './advent/Gift';
-import Scene from './advent/Scene';
+import Tag from './advent/Tag'
+import Gift from './advent/Gift'
+import FGift from './advent/FGift'
+import Scene from './advent/Scene'
 
 storiesOf('Welcome', module)
   .add('to Storybook', () => (
@@ -42,10 +44,28 @@ storiesOf('Lynda', module)
     <Christmas count={25}/>
   ))
 
-storiesOf('Gift', module)
-  .add('without tag', () => (
-    <Gift onClick={action('clicked')}></Gift>
+storiesOf('Christmas', module)
+  .add('FA gift', () => (
+    <FGift onClick={action('clicked')}></FGift>
   ))
-  .add('with tag', () => (
-    <Gift onClick={action('clicked')}></Gift>
+  .add('Tag only', () => (
+    <Tag onClick={action('open')}/>
+  ))
+  .add('Gift without tag', () => (
+    <Gift onClick={action('clicked')} text="11"></Gift>
+  ))
+  .add('Gift with tag', () => (
+    <Gift onClick={action('clicked')} text="11">Aaron</Gift>
+  ))
+  .add('Countdown Clock', () => (
+    <Clock/>
+  ))
+  .add('Blog Post', () => (
+    <BlogPost/>
+  ))
+  .add('Page', () => (
+    <Page/>
+  ))
+  .add('Scene', () => (
+    <Scene count={25}/>
   ));

@@ -1,10 +1,42 @@
 import React from 'react'
-import '../../App.css'
+import Tag from './Tag.js'
+import '../css/Gift.css'
 
 // React Gift Component
+/**
+ * Notes:
+ *
+ * Lifecycle Mounting
+ * getInitialState
+ * componentWillMount (right before render())
+ * render()
+ * componentDidMount (right after render())
+ *
+ * Updating
+ * componentWillReceiveProps (we can affect the state)
+ * shouldComponentUpdate (before render() - for optimization)
+ * componentWillUpdate (before render() - for optimization)
+ * render()
+ * componentDidUpdate (after render() and DOM is updated)
+ *
+ * Unmounting
+ * componentWillUnmount - unmounts all children as well (clean up DOM, invalidate timers, etc)
+ */
 var Gift = React.createClass({
   getInitialState() {
-    return { open: false, addressing: false }
+    return { open: false }
+  },
+
+  // place the gifts randomly on the screen
+  // componentWillMount fires just before render()
+  componentWillMount() {
+    this.style = {
+      right: this.randomPos( 0, window.innerWidth - 150, 'px' ),
+      top: this.randomPos( 0, window.innerHeight - 150, 'px' )
+    }
+  },
+  randomPos(x, y, s) {
+    return (x + Math.ceil(Math.random() * (y-x))) + s
   },
 
   // Functions for handling the opening/closing of a Gift (to view the blog post)
@@ -15,34 +47,33 @@ var Gift = React.createClass({
     this.setState({open: false})
   },
 
-  // Functions for handling adding a "To:" address note on the present's tag
-  address() {
-    this.setState({addressing: true})
+  suffixer() {
+    if( this.props.id == 1 || this.props.id == 21 ) return "st"
+    else if( this.props.id == 2 || this.props.id == 22 ) return "nd"
+    else if( this.props.id == 3 || this.props.id == 23 ) return "rd"
+    else return "th"
   },
-  save() {
-    this.props.onChange(this.refs.newGift.value, this.props.id)
-    this.setState({addressing: false})
-  },
-  remove() {
-    this.props.onRemove(this.props.id)
+  getTag() {
+    return (this.props.children != '') ? this.renderTag() : ''
   },
 
   // Function to render the Gift
   /* Note: Use refs to retrieve data (input) into the React script and work with it further */
+  // Use style={this.style} in <section> for random positioning
   renderGift() {
     return (
-      <section className="day active">
-        <div className="present" onClick={this.open}>
-          <span className="bow"></span>
-          <span className="ribbon"></span>
-          <div className="tag" onClick={this.address}>
-            To: <input type="text" ref="yourName" />
-            <button onClick={this.save}>X</button>
+        <section className="day active">
+          <div className="present" onClick={this.open}>
+            <span className="bow"></span>
+            <span className="ribbon"></span>
+            {this.getTag()}
+            <h1 className="present-title">{this.props.id || this.props.text}<span>{this.suffixer()}</span></h1>
           </div>
-          <h1 className="present-title">9<span>th</span></h1>
-        </div>
-      </section>
+        </section>
     )
+  },
+  renderTag() {
+    <Tag/>
   },
 
   // Function to render the Blog post

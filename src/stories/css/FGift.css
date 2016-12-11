@@ -1,0 +1,86 @@
+/**
+ * CSS for the Font Awesome Gifts
+ */
+ body {
+   padding: 50px;
+ }
+ .fa-gift {
+   color: #6DB8AA;
+ }
+
+ .day-list {
+   margin: 0 auto;
+ }
+
+.fa-gift-links {
+   display: inline-block;
+   margin: 0.25em;
+ }
+
+.fa-gift-links:hover {
+   cursor: pointer;
+ }
+
+ .fa-gift-links a {
+   text-decoration: none;
+   border-bottom: 0;
+   margin: 0;
+   padding: 0;
+ }
+
+ .fa-gift-links span {
+   background: #F38E7A;
+   color: white;
+   text-align: center;
+   width: 14px;
+   height: 24px;
+   font-family: "Sonsie One", cursive;
+   font-size: 0.9em;
+   position: absolute;
+   top: -1px;
+   left: 50%;
+   transform: translate(-50%, -30%);
+   z-index: 30;
+ }
+
+ .fa-gift-links.christmas span {
+   height: 33px;
+   font-size: 1.2em;
+   top: -7px;
+ }
+
+ .fa-gift-links.today .fa-gift,
+ .fa-gift-links:hover .fa-gift {
+   color: #0B8972;
+   text-shadow: 0px -2px 2px #CAE4F2;
+   transform: scale(1.1);
+ }
+
+ .fa-gift-links.today span,
+ .fa-gift-links:hover span {
+   background: #F17259;
+   height: 26px;
+   font-size: 1em;
+ }
+
+ .fa-gift-links.today span:before,
+ .fa-gift-links:hover span:before {
+   font-family: 'FontAwesome';
+   content: '\f063';
+   position: absolute;
+   top: -60px;
+   color: #9D1313;
+   font-size: 2em;
+   left: 50%;
+   transform: translateX(-50%);
+ }
+
+ .fa-gift-links.christmas:hover span {
+   opacity: 1;
+   height: 36px;
+   font-size: 1.3em;
+ }
+
+ .fa-gift-links.christmas:hover span:before {
+   top: -75px;
+ }

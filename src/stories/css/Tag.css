@@ -1,0 +1,53 @@
+/**
+ * CSS Styles for the Gift Tag
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Satisfy|Yellowtail');
+
+.tag {
+  border-right: 50px solid transparent;
+  border-top: 50px solid tan;
+  border-bottom: 50px solid tan;
+  border-left: 50px solid tan;
+  height: 0;
+  width: auto;
+  max-width: 200px;
+  font-family: Satisfy;
+}
+.tag:before {
+  border-right: 50px solid tan;
+  border-top: 50px solid transparent;
+  border-left: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  position: absolute;
+  top: -50px;
+  left: -150px;
+  height: 0px;
+  width: 1px;
+  content: '';
+  display: block;
+}
+.tag p {
+  position: absolute;
+  border-top: 3px solid brown;
+  border-bottom: 3px solid brown;
+  height: 90px;
+  width: 198px;
+  left: -55px;
+  top: -45px;
+  padding: 1em 50px 1em 15px;
+}
+.tag input {
+  background: transparent;
+  font-family: Satisfy;
+  font-size: 1.5em;
+  width: 120px;
+  outline: none;
+  border: none;
+}
+.tag button {
+  position: absolute;
+  top: 25px;
+  left: -25px;
+  font-size: 1.2em;
+}

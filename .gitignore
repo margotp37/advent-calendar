@@ -11,7 +11,7 @@ build
 
 # storybook config
 # See https://getstorybook.io/docs/react-storybook/basics/slow-start-guide if you need config
-.storybook
+# .storybook
 
 # misc
 .DS_Store
